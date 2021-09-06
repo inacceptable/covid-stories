@@ -1,1 +1,1 @@
-web:guincorn covidstories.wsgi
+web: gunicorn covidwebsite.wsgi 
