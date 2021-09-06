@@ -1,0 +1,10 @@
+{% load static %} 
+{% include 'html/social_share.html' %} 
+{% if request.get_full_path == "/home/" %}
+
+<div class='header-slogan-container'> 
+	<p class='lead'>Have you been impacted by Covid-19?</p>
+	<p class="lead">Covid Stories provides you a platform to annoymously share your story.</p>
+	<p class='lead'>Easily make a post and use the share buttons to share the link to your social media.</p>
+</div>
+{% endif %}

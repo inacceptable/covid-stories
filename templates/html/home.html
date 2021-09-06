@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="utf-8">
+	<title></title>
+	{% load static %} 
+	{% include 'html/bootstrap.html' %} 
+	<link rel='stylesheet' type='text/css' href="{% static 'css/style.css' %}"/> 
+	<link rel='stylesheet' type='text/css' href="{% static 'css/responsive.css' %}"/> 
+	<script src="{% static 'css/style.css' %}"></script>
+
+</head>
+	<body>
+		<h1 class='page-heading display-1'>Covid Stories</h1>
+		{% block title %}
+
+		{% include 'html/page_header.html' %}
+		<div class='submit-read-posts-container'>
+			<div class='submit-post'>
+				<a href="#modalForm" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalForm" role="button">Submit Post </a>
+
+			{% include 'html/modal.html' %} 
+			</div>
+			<div class='read-post'>
+				<a href="{% url 'read_story' %}" class="btn btn-dark"    role="button">Read Post </a>
+			</div> 
+
+		</div>
+		<div class='story-counter '> 
+			<h1 class="display-4">{{count}} submitted stories</h1>
+		</div> 
+		<div class='preview-stories'> 
+			{% for x in covid_stories %}
+			<div class="card text-dark bg-light mb-3" >
+  				<div class="card-body">
+    				<h5 class="card-title">{{ x.subject }}</h5>
+    				<p class="card-text">{{ x.content }}</p>
+  				</div>
+  				<a href="{% url 'story' %}?story={{x.story_id}}" class="btn btn-info" tabindex="-1" role="button">Read Post </a>
+			</div>
+			{% endfor %}
+			</div>  
+		{% endblock %}
+
+	</body>
+</html>

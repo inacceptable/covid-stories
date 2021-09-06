@@ -1,0 +1,31 @@
+<!-- Modal -->
+<div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title display-5" id="exampleModalLabel">Submit your story below</h5>
+                <button type="button" class="btn-close float-right" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/submit_story/" method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label class="form-label lead">What's the title of your story? </label>
+                        <input type="text" class="form-control lead" id="title" name="title" placeholder="Story title" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label lead">Email Address? </label>
+                        <input type="text" class="form-control lead" id="email" name="email" placeholder="Email address" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label lead">Enter your story </label>
+                        <textarea id="content" name="content" class="form-control lead"></textarea>
+                    </div>
+                    <div class="modal-footer d-block">
+                        <input type="submit" class="btn btn-info "/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

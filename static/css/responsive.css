@@ -1,0 +1,100 @@
+@media only screen and (max-width: 1200px) 
+{
+	
+	.preview-stories
+	{
+		width: 60%;
+		grid-template-columns: 50% 50%;
+	}
+	.page-heading
+{
+	text-align: center;
+	font-size: 6em;
+
+}
+}
+
+
+@media only screen and (max-width: 900px)
+{
+	.body
+	{
+		position: absolute;
+	}
+	.header-slogan-container
+	{
+		width: 85%;
+	}
+	.preview-stories
+	{
+		width: 90%;
+		grid-template-columns: 100%;
+
+
+	}
+	.preview-stories .card
+	{
+	}
+	.story-preview h3
+	{
+		width: 100%;
+		text-overflow: ellipsis;
+
+	}
+	
+	.story-preview-heading h3
+	{
+		overflow: hidden;
+   		text-overflow: ellipsis;
+   		display: -webkit-box;
+   		-webkit-line-clamp: 1; /* number of lines to show */
+   		-webkit-box-orient: vertical;
+	}
+	.story-preview
+	{
+		height: 220px;
+	}
+	.read-post a 
+	{
+		width: 100%;
+	}
+	.submit-post a
+	{
+		width: 100%;
+	}
+	.stories-container
+	{
+		width: 90%;
+	}
+	.page-text a
+	{
+		width: 100%;
+	}
+	.share-this-story
+	{
+		width: 100%;
+		text-align: center;
+		 position: fixed;
+    	top: 0;
+    	background-color: white;
+    	margin: 0 auto;
+    	padding: 0;
+    	z-index: 9999;
+
+		
+	}
+	.share-story-heading
+	{
+		margin: 0;
+		width: 100%;
+	}
+	.story-content
+	{
+		width: 95%;
+		margin-bottom: 5%;
+	}
+	.page-heading
+	{
+		margin-top: 50px;
+	}
+} 

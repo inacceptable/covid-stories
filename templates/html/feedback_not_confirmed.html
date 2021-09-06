@@ -1,0 +1,17 @@
+{% extends "html/home.html" %}
+{% block title %}
+<div class="return-home justify-content-center">
+	<div class='return-home-button'> 
+		<a href="{% url 'home' %}" class="btn btn-dark" tabindex="-1" role="button">Return Home</a>
+	</div>
+	<div class='return-home-button'> 
+		<a href="{{ request.META.HTTP_REFERER }}" class="btn btn-dark">Go back</a>
+	</div>
+</div>
+
+<div class='feedback-confirmation'>
+	<h1 class='display-1'>
+		Error, we could not accept the information provided!
+	</h1>
+</div>
+{% endblock %}

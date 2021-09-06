@@ -1,0 +1,26 @@
+{% extends "html/home.html" %}
+{% block title %}
+<div class='share-this-story'> 
+	<div class='share-story-heading'> 
+		<h1 class='display-6'>Share this story</h1>
+	</div> 
+	{% include 'html/social_share.html' %} 
+</div>
+<div class="return-home justify-content-center">
+	<div class='return-home-button'> 
+		<a href="{% url 'home' %}" class="btn btn-dark" tabindex="-1" role="button">Return Home</a>
+	</div>
+	<div class='return-home-button'> 
+		<a href="{{ request.META.HTTP_REFERER }}" class="btn btn-dark">Go back</a>
+	</div>
+</div>
+<div class='story-content'>
+	<div class='story-content-header'> 
+		<h1 class='display-4'>{{story.subject}}</h1>
+		<hr /> 
+	</div> 
+	<div class='story-content-container'> 
+		<p class='lead'>{{story.content}}</p>
+	</div> 
+</div>
+{% endblock %}

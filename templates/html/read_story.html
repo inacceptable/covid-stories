@@ -1,0 +1,40 @@
+{% extends "html/home.html" %}
+{% block title %}
+<div class="return-home d-flex justify-content-center">
+	<a href="{% url 'home' %}" class="btn btn-dark" tabindex="-1" role="button">Return Home</a>
+</div>
+
+<div class='stories-container'> 
+  {% for x in stories %}
+      <div class="card story text-dark bg-light mb-3" >
+          <div class="card-body">
+            <h5 class="card-title display-6">{{ x.subject }}</h5>
+            <p class="card-text">{{ x.content }}</p>
+          </div>
+          <a href="{% url 'story' %}?story={{x.story_id}}" class="btn btn-info" tabindex="-1" role="button">Read Post </a>
+      </div>
+      {% endfor %}
+</div>
+
+    <!--Pagination-->
+      <div class="page-link-container p-4">
+        <div class="pagination">
+            <span class="step-links">
+              {% if stories.has_previous %}
+                  <a href="?page=1" class="btn btn-dark" tabindex="-1" role="button">first</a>
+                  <a href="?page={{ movies.previous_page_number }}" class="btn btn-dark" tabindex="-1" role="button">back</a>
+              {% endif %}
+
+                <div class="page-text">
+                    <p class='leads text-dark'>Page {{ stories.number }} of {{ stories.paginator.num_pages }} </p>
+                </div>
+              {% if stories.has_next %}
+                  <a href="?page={{ stories.next_page_number }}" class="btn btn-dark" tabindex="-1" role="button">next</a>
+                  <a href="?page={{ stories.paginator.num_pages }}" class="btn btn-dark" tabindex="-1" role="button">last</a>
+              {% endif %}
+            </span>
+            </div>
+        </div>
+      <!--end of Pagination-->
+
+  {% endblock %}
