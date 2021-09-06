@@ -45,7 +45,6 @@ pytesseract==0.3.7
 python-dateutil==2.8.1
 python-gnupg==0.4.7
 pytz==2020.5
-pywin32==300
 regex==2021.8.3
 reportlab==3.5.67
 six==1.15.0
