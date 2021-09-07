@@ -75,8 +75,7 @@ WSGI_APPLICATION = 'covidwebsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES['default']=db_from_env
-# Password validation
+DATABASES['default'] = dj_database_url.config()
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
