@@ -75,10 +75,15 @@ WSGI_APPLICATION = 'covidwebsite.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
-}
+ "default": 
+ {
+  "ENGINE": "django.db.backends.postgresql_psycopg2", #one of those should work
+  'ENGINE': 'django.db.backends.postgresql',   #one of those should work
+  "NAME": 'myProject',
+  "HOST": "localhost", 
+  "PORT": "5432",
+ }
+ }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
