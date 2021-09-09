@@ -1,17 +1,17 @@
 {% load static %}
 <div class='social-share text-successs'> 
 	<div class='social-share-button'>
-		<a href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:8000/{{ request.get_full_path }} ">
+		<a href="http://www.facebook.com/sharer.php?href={{ request.get_full_path }}">
 			<img class='share-icon' src="{% static 'images/facebook.png' %}" alt=""> 
 		</a>
 	</div>
 	<div class='social-share-button'>
-		<a title="Share this on Reddit" href="http://reddit.com/submit?url=http://iamkawsar.com&title=Your Website Name">
+		<a title="Share this on Reddit" href="http://reddit.com/submit?url={{ request.get_full_path }}&title=Covid Stories">
 			<img class='share-icon' src="{% static 'images/reddit.png' %}" alt="">
 		</a>
 	</div> 
 	<div class='social-share-button'>
-		<a href="http://twitter.com/home?status=Check out this Awesome Site - http://yourwebsite.com @yourusername">
+		<a href="http://twitter.com/home?status=Check out this Awesome Site - {{ request.get_full_path }} @yourusername">
 			<img class='share-icon' src="{% static 'images/twitter.png' %}" alt="">
 		</a>
 	</div>
