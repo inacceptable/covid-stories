@@ -7,10 +7,11 @@
 	{% include 'html/bootstrap.html' %} 
 	<link rel='stylesheet' type='text/css' href="{% static 'css/style.css' %}"/> 
 	<link rel='stylesheet' type='text/css' href="{% static 'css/responsive.css' %}"/> 
-	<script src="{% static 'css/style.css' %}"></script>
-
+	<script src="{% static 'js/script.js' %}"></script>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v11.0" nonce="3dTjzz2N"></script>
 </head>
 	<body>
+		<div id="fb-root"></div>
 		<h1 class='page-heading display-1'>Covid Stories</h1>
 		{% block title %}
 		{% include 'html/page_header.html' %}

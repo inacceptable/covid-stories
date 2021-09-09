@@ -16,7 +16,7 @@ def check_email_use(email):
 def home(request):
 	covid_stories = covid_story.objects.order_by("-updated_at")[:4]
 	count = covid_story.objects.all().count()
-	page_name = 'home'
+	page_name = 'https://covid19-stories.herokuapp.com/home/'
 	context = {
 		'covid_stories' : covid_stories,
 		'count' : count,
@@ -38,7 +38,7 @@ def read_story(request):
 def story(request): 
 	test = request.GET['story']
 	x = covid_story.objects.get(story_id=test) 
-	page_name = 'story?story=' + str(x.story_id)
+	page_name = 'https://covid19-stories.herokuapp.com/story?story=' + str(x.story_id)
 	context = { 
 		'story' : x,
 		'page_name' : page_name, 
