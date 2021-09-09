@@ -8,7 +8,9 @@ def valid_email(email):
   	return bool(re.search(r"^[\w\.\+\-]+\@[\w]+\.[a-z]{2,3}$", email))
 
 def check_email_use(email): 
-	queryset = covid_story.objects.all().annotate(count = Count(email))
+	count_array = covid_story.objects.filter(email=email)
+	count = 0 
+	count = len(count_array) 
 	return count 
 
 def home(request):
@@ -16,7 +18,7 @@ def home(request):
 	count = covid_story.objects.all().count()
 	context = {
 		'covid_stories' : covid_stories,
-		'count' : count
+		'count' : count,
 	}
 	return render(request, 'html/home.html', context)
 
@@ -50,8 +52,19 @@ def submit_story(request):
 			return render(request, 'html/feedback_not_confirmed.html')
 		else:
 			pass
-		
 
+	count_email = check_email_use(email_address)
+	context = {
+		'count_email' : count_email,
+		'email_valid' : email_valid,
+	} 
+	if count_email > 3: 
+		return render(request, 'html/email_used_alot.html', context) 
+	else:
+		pass
+
+
+		
 	new_post = covid_story(subject=story_subject, email=email_address, content=story_content)
 	new_post.save() 
-	return render(request, 'html/feedback_confirmation.html', context) 
+	return render(request, 'html/feedback_confirmation.html', context) 	

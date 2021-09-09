@@ -1,4 +1,5 @@
-{% include 'html/page_header.html' %}
+{% extends "html/home.html" %}
+{% block title %}
 <div class="return-home justify-content-center">
 	<div class='return-home-button'> 
 		<a href="{% url 'home' %}" class="btn btn-dark" tabindex="-1" role="button">Return Home</a>
@@ -10,6 +11,7 @@
 
 <div class='feedback-confirmation'>
 	<h1 class='display-1'>
-		Error, this email has been used too many times!!!
+		Sorry, this email was used too many times! 
 	</h1>
 </div>
+{% endblock %}
