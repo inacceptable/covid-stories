@@ -1,8 +1,8 @@
 {% load static %}
 <div class='social-share text-successs'> 
 	<ul class="share-buttons" data-source="simplesharingbuttons.com">
-		<li><a href="http://www.facebook.com/sharer/sharer.php?u={{ page_name | urlencode }}"><img alt="Share on Facebook" src="{% static 'images/facebook.png' %}" /></a></li>
-  		<li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Fcovid19-stories.herokuapp.com%2F&text=Covid%20Stories:%20https%3A%2F%2Fcovid19-stories.herokuapp.com%2F" target="_blank" title="Tweet"><img alt="Tweet" src="{% static 'images/twitter.png' %}" /></a></li>
-  		<li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Fcovid19-stories.herokuapp.com%2F&title=Covid%20Stories" target="_blank" title="Submit to Reddit"><img alt="Submit to Reddit" src="{% static 'images/reddit.png' %}" /></a></li>
+		<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcovid19-stories.herokuapp.com%2F{{page_name|urlencode}}&quote=Covid%20Stories" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="{% static 'images/facebook.png' %}" /></a></li>
+  		<li><a href="https://twitter.com/intent/tweet?source=httpshttps%3A%2F%2Fcovid19-stories.herokuapp.com%2F{{page_name|urlencode}}&text=Covid%20Stories:%20https%3A%2F%2Fcovid19-stories.herokuapp.com%2F" target="_blank" title="Tweet"><img alt="Tweet" src="{% static 'images/twitter.png' %}" /></a></li>
+  		<li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Fcovid19-stories.herokuapp.com%2F{{page_name|urlencode}}&title=Covid%20Stories" target="_blank" title="Submit to Reddit"><img alt="Submit to Reddit" src="{% static 'images/reddit.png' %}" /></a></li>
 	</ul>
 </div>
