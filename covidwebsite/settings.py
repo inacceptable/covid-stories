@@ -16,17 +16,17 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import dj_database_url
 import django_heroku
+from django.core.management.utils import get_random_secret_key
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'tbfjqpite29hxtz0$5ahupm=#yla0rn6c9e7yh!nzrkcqxd$qn'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True 
-
-ALLOWED_HOSTS = ['*']
+#SECRET_KEY = 'tbfjqpite29hxtz0$5ahupm=#yla0rn6c9e7yh!nzrkcqxd$qn'
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
+DEBUG = os.getenv('DEBUG', False) == 'True'
+DEBUG = os.getenv("DEBUG", "False") == "True"
+ALLOWED_HOSTS = ['127.0.0.1', 'covid19-stories.herokuapp.com']
 
 
 # Application definition
