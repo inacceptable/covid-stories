@@ -26,7 +26,7 @@ from django.core.management.utils import get_random_secret_key
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', get_random_secret_key())
 
 DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'False'
-ALLOWED_HOSTS = ['127.0.0.1', 'covid19-stories.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '']
 
 
 # Application definition
